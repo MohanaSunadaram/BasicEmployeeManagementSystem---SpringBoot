@@ -1,0 +1,67 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+		crossorigin="anonymous">
+	
+	<title>Employee Registration</title>
+	
+</head>
+
+<body>
+
+	<div class="container">
+	
+		<div class = "d-md-flex  flex-column  align-items-center mt-5 ">
+		
+			<h3 class="mb-5">Employee Registration Form</h3>
+			
+			<form class =" d-md-flex flex-column align-items-center align-self-stretch " th:action="@{/employees/save}" th:object="${employee}"
+				method="POST">
+				
+				<input type ="hidden" th:field = "*{id}">
+				
+				<input class="form-control mb-4 col-4" type="text"
+					th:field="*{firstName}" placeholder="First Name">
+					
+				<input class="form-control mb-4 col-4"  type="text" th:field="*{lastName}"
+					placeholder="Last Name">
+					
+				<input class="form-control mb-4 col-4" type="email" th:field="*{email}"
+					placeholder="email">
+
+				<button type="submit" class="btn btn-success mb-3">Save</button>
+			</form>
+			
+			<a th:href="@{/employees/list}"> Back to Employee List</a>
+		</div>
+
+	</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
